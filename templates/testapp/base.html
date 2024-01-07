@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/demo.css' %}">
+</head>
+<body>
+<h1>{{abc}}</h1>
+<img src="{% static 'images/k.jpg' %}" alt="images" >
+{% if stulist %}
+<table border="3" align="center">
+    <thead>
+    <th>Name</th>
+    <th>rno</th>
+    </thead>
+    {% for stu in stulist %}
+    <tr>
+<!--        <td>Name :{{stu.name|upper}}</td>-->
+<!--        <td>Name :{{stu.name|lower}}</td>-->
+<!--        <td>Name :{{stu.name|title}}</td>-->
+        <td>Name :{{stu.name|ffu}}</td>
+        <td>rno :{{stu.rno}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<h2>No data found</h2>
+{% endif %}
+</body>
+
+</html>
